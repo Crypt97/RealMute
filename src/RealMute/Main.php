@@ -28,7 +28,7 @@ use pocketmine\event\block\BlockPlaceEvent;
 use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\event\player\PlayerCommandPreprocessEvent;
 use pocketmine\event\player\PlayerJoinEvent;
-use pocketmine\event\TranslationContainer;
+use pocketmine\lang\TranslationContainer;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat;
@@ -103,7 +103,7 @@ class Main extends PluginBase implements Listener{
 		$this->lastmsgtime = "";
 		$this->consecutivemsg = 1;
 		$checkTimeTask = new CheckTime($this);
-		$handler = $this->getServer()->getScheduler()->scheduleRepeatingTask($checkTimeTask, 20);
+		$handler = $this->getScheduler()->scheduleRepeatingTask($checkTimeTask, 20);
 		$checkTimeTask->setHandler($handler);
 	}
 	public function onDisable(){
